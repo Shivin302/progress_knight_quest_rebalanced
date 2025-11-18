@@ -186,7 +186,7 @@ function setCustomEffects() {
 
     const timeWarping = gameData.taskData["Time Warping"]
     timeWarping.getEffect = function() {
-        return 1 + getBaseLog(timeWarping.isHero ? 1.005 : 10, timeWarping.level + 1)
+        return 1 + getBaseLog(timeWarping.isHero ? 1.005 : Math.exp(1), timeWarping.level + 1)
     }
 
     const immortality = gameData.taskData["Life Essence"]
@@ -284,6 +284,14 @@ function getEvilXpGain() {
     }
 
     return getEvil()
+}
+
+function getEvilMaxLevelMultiplier() {
+    const evil = getEvil()
+    const threshold = Math.exp(10)
+    if (evil == 0) return 0
+    if (evil > threshold) return 0.5
+    return 0.5 * Math.exp(evil / threshold) / Math.exp(1)
 }
 
 function getEssence() {
@@ -732,6 +740,7 @@ function rebirthTwo() {
         return;
 
     gameData.rebirthTwoCount += 1
+    const evilmaxlevelmultiplier = getEvilMaxLevelMultiplier()
     gameData.evil += getEvilGain()
 
     resetEvilPerks()
@@ -746,7 +755,7 @@ function rebirthTwo() {
 
     for (const taskName in gameData.taskData) {
         const task = gameData.taskData[taskName]
-        task.maxLevel = 0
+        task.maxLevel = task.maxLevel * evilmaxlevelmultiplier
     }
 }
 

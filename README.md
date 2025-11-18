@@ -1,4 +1,4 @@
-# Progress Knight Quest
+# Progress Knight Quest Rebalanced
 
 A continuation of Progress Knight 2.0. Contains 5 prestige layers with various unique mechanics.
 

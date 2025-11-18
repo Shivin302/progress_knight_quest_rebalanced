@@ -8,7 +8,7 @@ function getEvilPerksGeneration()
 		essence_perk_buff_mult *= gameData.essence
 	else
 		essence_perk_buff_mult = 1e308
-	return math.log10(gameData.evil + 1) * math.log10(essence_perk_buff_mult) / 365	
+	return math.log(gameData.evil + 1) * math.log(essence_perk_buff_mult) / 365	
 }
 
 function getEyeRequirement(){
@@ -47,23 +47,23 @@ function getEvilPerkCost(evilperknum){
 	case 1:
 		if (gameData.evil_perks.reduce_eye_requirement == 10)
 			return Infinity
-		return math.pow(2, gameData.evil_perks.reduce_eye_requirement + 1) + 4.6
+		return math.pow(1.5, gameData.evil_perks.reduce_eye_requirement + 1) + 6.6-1.5
 	case 2:
 		if (gameData.evil_perks.reduce_evil_requirement == 14)
 			return Infinity
-		return math.pow(3, gameData.evil_perks.reduce_evil_requirement + 1) + 66.6-3
+		return math.pow(2, gameData.evil_perks.reduce_evil_requirement + 1) + 66.6-2
 	case 3: 
 		if (gameData.evil_perks.reduce_the_void_requirement == 9)
 			return Infinity
-		return math.pow(5, gameData.evil_perks.reduce_the_void_requirement + 1) + 666.6-5
+		return math.pow(3, gameData.evil_perks.reduce_the_void_requirement + 1) + 666.6-3
 	case 4:
 		if (gameData.evil_perks.reduce_celestial_requirement == 9)
 			return Infinity
-		return math.pow(5, gameData.evil_perks.reduce_celestial_requirement + 1) + 6666-5
+		return math.pow(4, gameData.evil_perks.reduce_celestial_requirement + 1) + 6666-4
 	case 5:
 		if (gameData.essence >= 1e308)
 			return Infinity
-		return math.pow(10, gameData.evil_perks.receive_essence) * 6.66e9
+		return math.pow(5, gameData.evil_perks.receive_essence) * 6.66e9
 	}	
 }
 

@@ -1,3 +1,13 @@
+version 1.0.0
+* First version of Progress Knight Quest Rebalanced
+* Made task maxlevel not reset to zero, instead a percentage of the previous maxlevel based on your current evil
+* Lowered cost of evil perks
+* Increased evil perk point gain (increases with natural log instead of base 10)
+* Made Time Warping increase Gamespeed more in early game (increases with natural log instead of base 10)
+
+
+***** Progress Knight Quest Changelog *****
+
 version 2.5.0 / 01.08.2024
 * Improved display on mobile devices
 * Added offline progress (up to 1 hour)
