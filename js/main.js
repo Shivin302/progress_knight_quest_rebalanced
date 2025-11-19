@@ -341,7 +341,7 @@ function applySpeedOnBigInt(value) {
 }
 
 function getEvilGain() {
-    const baseEvilGain = 1.5
+    const baseEvilGain = 1.2
     const evilControl = gameData.taskData["Evil Control"]
     const bloodMeditation = gameData.taskData["Blood Meditation"]
     const absoluteWish = gameData.taskData ["Absolute Wish"]
