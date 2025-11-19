@@ -111,6 +111,7 @@ function renderSideBar() {
 
     document.getElementById("evilDisplay").textContent = format(gameData.evil)
     document.getElementById("evilGainDisplay").textContent = format(getEvilGain())
+    document.getElementById("evilMaxLevelMultiplierDisplay").textContent = format(getEvilMaxLevelMultiplier())
     document.getElementById("evilGainButtonDisplay").textContent = "+" + format(getEvilGain())
 
     document.getElementById("essenceDisplay").textContent = format(gameData.essence)

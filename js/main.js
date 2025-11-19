@@ -291,8 +291,9 @@ function getEvilMaxLevelMultiplier() {
     const evil = getEvil()
     const threshold = Math.exp(10)
     if (evil == 0) return 0
-    if (evil > threshold) return 0.25
-    return 0.25 * Math.exp(evil / threshold) / Math.exp(1)
+    if (evil > threshold) return 0.1
+    const multiplier = 0.1 * Math.exp(evil / threshold) / Math.exp(1)
+    return Math.round(multiplier * 100) / 100
 }
 
 function getEssence() {
