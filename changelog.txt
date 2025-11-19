@@ -1,5 +1,6 @@
 version 1.0.0
 * First version of Progress Knight Quest Rebalanced
+* Increased base evil gain to 1.5
 * Made task maxlevel not reset to zero, instead a percentage (upto 25%) of the previous maxlevel based on your current evil
 * Lowered cost of evil perks
 * Increased evil perk point gain (increases with natural log instead of base 10)
