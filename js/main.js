@@ -186,7 +186,8 @@ function setCustomEffects() {
 
     const timeWarping = gameData.taskData["Time Warping"]
     timeWarping.getEffect = function() {
-        return 1 + getBaseLog(timeWarping.isHero ? 1.005 : Math.exp(1), timeWarping.level + 1)
+        if (timeWarping.isHero) return 1 + getBaseLog(1.005, timeWarping.level + 1)
+        else return 1 + Math.pow(timeWarping.level + 1, 0.3)
     }
 
     const immortality = gameData.taskData["Life Essence"]
@@ -290,8 +291,8 @@ function getEvilMaxLevelMultiplier() {
     const evil = getEvil()
     const threshold = Math.exp(10)
     if (evil == 0) return 0
-    if (evil > threshold) return 0.5
-    return 0.5 * Math.exp(evil / threshold) / Math.exp(1)
+    if (evil > threshold) return 0.25
+    return 0.25 * Math.exp(evil / threshold) / Math.exp(1)
 }
 
 function getEssence() {
@@ -340,6 +341,7 @@ function applySpeedOnBigInt(value) {
 }
 
 function getEvilGain() {
+    const baseEvilGain = 1.5
     const evilControl = gameData.taskData["Evil Control"]
     const bloodMeditation = gameData.taskData["Blood Meditation"]
     const absoluteWish = gameData.taskData ["Absolute Wish"]
@@ -350,7 +352,7 @@ function getEvilGain() {
     const stairWayToHell = getBindedItemEffect("Highway to hell")
     const evilBooster = (gameData.perks.evil_booster == 1) ? 1e50 : 1
 
-    const evilGain = evilControl.getEffect() * bloodMeditation.getEffect() * absoluteWish.getEffect()
+    const evilGain = baseEvilGain * evilControl.getEffect() * bloodMeditation.getEffect() * absoluteWish.getEffect()
         * oblivionEmbodiment.getEffect() * yingYang.getEffect() * inferno * getChallengeBonus("legends_never_die")
         * getDarkMatterSkillEvil() * theDevilInsideYou * stairWayToHell() * evilBooster
 
