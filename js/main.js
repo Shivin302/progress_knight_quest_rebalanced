@@ -187,7 +187,7 @@ function setCustomEffects() {
     const timeWarping = gameData.taskData["Time Warping"]
     timeWarping.getEffect = function() {
         if (timeWarping.isHero) return 1 + getBaseLog(1.005, timeWarping.level + 1)
-        else return 1 + Math.pow(timeWarping.level + 1, 0.3)
+        else return 1 + Math.pow(timeWarping.level, 0.3)
     }
 
     const immortality = gameData.taskData["Life Essence"]
