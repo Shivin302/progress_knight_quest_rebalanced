@@ -3,7 +3,6 @@ version 1.0.0
 * Increased base evil gain to 1.2
 * Made task maxlevel not reset to zero, instead a percentage (upto 10%) of the previous maxlevel based on your current evil
 * Lowered cost of evil perks
-* Increased evil perk point gain (increases with natural log instead of base 10)
 * Time Warping increases Gamespeed more (increases with cube root instead of log10)
 
 

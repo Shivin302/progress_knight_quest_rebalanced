@@ -8,7 +8,7 @@ function getEvilPerksGeneration()
 		essence_perk_buff_mult *= gameData.essence
 	else
 		essence_perk_buff_mult = 1e308
-	return math.log(gameData.evil + 1) * math.log(essence_perk_buff_mult) / 365	
+	return math.log10(gameData.evil + 1) * math.log10(essence_perk_buff_mult) / 365	
 }
 
 function getEyeRequirement(){
