@@ -757,7 +757,7 @@ function rebirthTwo() {
 
     for (const taskName in gameData.taskData) {
         const task = gameData.taskData[taskName]
-        task.maxLevel = task.maxLevel * evilmaxlevelmultiplier
+        task.maxLevel = Math.floor(task.maxLevel * evilmaxlevelmultiplier)
     }
 }
 
